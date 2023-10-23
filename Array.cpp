@@ -107,12 +107,33 @@ int Array::getSize() const{
 
 
 // Выввод массива
-ostream& operator <<(ostream& out,
-	const Array& arr){
+ostream& operator <<(ostream& out, const Array& arr){
 	out << "Total size: " << arr.size << endl;
 	for (int i = 0; i < arr.size; i++)
-		out << arr.ptr[i] << endl;
+		out << arr.ptr[i] << " ";
 	return out;
 }
 
 
+// функция для задачи Иосифа Флави
+void Array::Iosiph(int k) {
+	if (k < 1) {
+		cout << "Error";
+	}
+	else {
+		// задаём точку старта
+		int pos = k - 1;
+
+		// удаляем элементы из списка
+		while (this->getSize() > 1) {
+			// удаляем элемент
+			this->remove(pos);
+			//  делаем шаг
+			pos += k - 1;
+			// проверка шага
+			while (pos >= this->getSize()) {
+				pos = pos - this->getSize();
+			}
+		}
+	}
+}

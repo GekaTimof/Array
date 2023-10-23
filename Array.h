@@ -15,7 +15,7 @@ const int DEFAULT_CAPACITY = 10;
 // класс для реализации вектора
 class Array{
 
-	// Указатель на массив в динамич. памяти
+// Указатель на массив в динамич. памяти
 int* ptr;
 // Текущий размер
 int size;
@@ -65,13 +65,8 @@ public:
 	// Выввод массива
 	friend ostream& operator <<(ostream& out, const Array& arr);
 
-
-
-// часть недоступная пользователю
-private:
+	// функция для задачи Иосифа Флави
+	void Iosiph(int k);
 
 };
-
-
-
 #endif
